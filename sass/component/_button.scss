@@ -1,0 +1,37 @@
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    position: relative;
+    font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+  }
+  &--white {
+    background-color: $colour-white;
+    color: $colour-grey-dark;
+    margin-top: 4rem;
+  }
+  &-text {
+    &:link,
+    &:visited {
+      font-size: $default-font-size;
+      color: $colour-primary;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid $colour-primary;
+      padding: 3px;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: $colour-white;
+      background-color: $colour-primary;
+      box-shadow: 0 1rem 2rem rgba($colour-black, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.composition {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  &_photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 1rem rgba($colour-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    outline-offset: 2rem;
+  }
+  &--p1 {
+    top: 0;
+    left: 0;
+  }
+  &--p2 {
+    top: 0;
+    right: 0;
+  }
+}

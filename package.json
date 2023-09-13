@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "sass": "^1.66.1"
+  },
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "a landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-sass": "sass sass/main.scss css/stylesheet.css -w"
+  },
+  "author": "seun",
+  "license": "ISC"
+}
