@@ -1,0 +1,16 @@
+.card {
+  position: relative;
+  height: 52rem;
+
+  &_side {
+    height: 52rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($colour-black, 0.15);
+  }
+}
