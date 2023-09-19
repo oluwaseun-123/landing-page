@@ -10,8 +10,17 @@
   padding: 0 10rem;
   position: relative;
 }
+.col-1-of-3 {
+  width: 100%;
+  // padding: 0 5rem;
+}
+
 .col-1-of-4 {
   // padding: 0 8rem;
   // width: calc(100% / 4);
   align-self: stretch;
+}
+.card-container {
+  padding: 0 9rem;
+  gap: 8rem;
 }

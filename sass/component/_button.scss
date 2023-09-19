@@ -34,4 +34,8 @@
       transform: translateY(-2px);
     }
   }
+  &--green {
+    color: $colour-white;
+    background-color: $colour-primary;
+  }
 }
