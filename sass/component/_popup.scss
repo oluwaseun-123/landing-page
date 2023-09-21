@@ -1,1 +1,81 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($colour-black, 0.6);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
 
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    transform: scale(1);
+  }
+
+  &__content {
+    width: 80%;
+    background-color: $colour-white;
+    box-shadow: 0 2rem 4rem rgba($colour-black, 0.2);
+    border-radius: 3px;
+    transform: scale(0.25);
+    margin: auto;
+    margin-top: 7rem;
+    @include rowFlex();
+    transition: all 0.5s 0.2s;
+  }
+
+  &__left {
+    width: calc(100% / 3);
+    padding-bottom: 3rem;
+  }
+
+  &__right {
+    position: relative;
+    @include columnFlex();
+    width: calc(200% / 3);
+    padding: 3rem 3rem 3rem 2rem;
+    align-items: start;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    // height: 4rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $colour-grey-light-2;
+    line-height: 2.3rem;
+  }
+
+  &__close {
+    &:link,
+    :visited {
+      display: inline-block;
+      color: $colour-grey-dark;
+      line-height: 1px;
+      position: absolute;
+      top: 3rem;
+      right: 5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $colour-primary;
+    }
+  }
+}
