@@ -12,12 +12,21 @@
     font-weight: 400;
     letter-spacing: 3.5rem;
     margin-bottom: 1rem;
+
+    @include response(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
   &--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
+
+    @include response(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 .heading-secondary {
@@ -35,6 +44,14 @@
   // background-clip: text;
   -webkit-background-clip: text;
   transition: all 0.2s;
+
+  @include response(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include response(phone) {
+    font-size: 2.5rem;
+  }
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba($colour-black, 0.2);

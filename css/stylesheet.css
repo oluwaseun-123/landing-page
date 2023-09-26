@@ -1,3 +1,20 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + flex > page layout > components
+
+1em = 16px
+*/
 * {
   padding: 0;
   margin: 0;
@@ -11,9 +28,29 @@ body {
   font-weight: 400;
   color: #777;
 }
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
+}
 
 html {
   font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 .heading-primary {
@@ -31,11 +68,22 @@ html {
   letter-spacing: 3.5rem;
   margin-bottom: 1rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -48,6 +96,16 @@ html {
   color: transparent;
   -webkit-background-clip: text;
   transition: all 0.2s;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -288,6 +346,25 @@ html {
 .card:hover .card_side--back {
   transform: rotateY(0deg);
 }
+@media only screen and (max-width: 56.23em), only screen and (hover: none) {
+  .card {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  }
+}
+.card_side {
+  position: relative;
+  height: 100%;
+  box-shadow: none;
+}
+.card_side--back {
+  transform: rotateY(0);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+.card:hover .card_side--front {
+  transform: rotateY(0);
+}
 
 .composition {
   position: relative;
@@ -313,13 +390,31 @@ html {
   top: 0;
   left: 0;
 }
+@media only screen and (max-width: 56.25em) {
+  .composition_photo--p1 {
+    top: 1rem;
+    left: -3;
+  }
+}
 .composition_photo--p2 {
   top: 2.5rem;
   right: 0;
 }
+@media only screen and (max-width: 56.25em) {
+  .composition_photo--p2 {
+    top: 0rem;
+    left: 22rem;
+  }
+}
 .composition_photo--p3 {
   top: 10rem;
   left: 20%;
+}
+@media only screen and (max-width: 56.25em) {
+  .composition_photo--p3 {
+    top: 1rem;
+    left: 12rem;
+  }
 }
 
 .feature-box {
@@ -347,6 +442,17 @@ html {
 .form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .form__group:not(:last-child) {
+    width: 100%;
+    align-self: start;
+    justify-self: start;
+  }
+}
+.form__group:not(:last-child) .rad {
+  align-items: start !important;
+  justify-content: start !important;
+}
 .form__input {
   display: block;
   width: 90%;
@@ -359,6 +465,11 @@ html {
   border: none;
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
+}
+@media only screen and (max-width: 56.25em) {
+  .form__input {
+    width: 100%;
+  }
 }
 .form__input:focus {
   outline: 0;
@@ -508,8 +619,26 @@ html {
   transform: skewX(-12deg);
   margin-bottom: 4rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .story {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .story {
+    transform: skewX(0);
+    width: 80%;
+  }
+}
 .story > * {
   transform: skewX(12deg);
+}
+@media only screen and (max-width: 37.5em) {
+  .story > * {
+    transform: skewX(0);
+  }
 }
 .story__shape {
   height: 15rem;
@@ -598,15 +727,32 @@ html {
   width: 100%;
   align-items: stretch;
 }
+@media only screen and (max-width: 56.25em) {
+  .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 
 .col-1-of-2 {
   width: 50%;
   padding: 0 10rem;
   position: relative;
 }
+@media only screen and (max-width: 56.25em) {
+  .col-1-of-2 {
+    padding-bottom: 10rem;
+    width: 80%;
+  }
+}
 
 .col-1-of-3 {
   width: 100%;
+}
+@media only screen and (max-width: 56.25em) {
+  .col-1-of-3 {
+    height: 100%;
+  }
 }
 
 .col-1-of-4 {
@@ -626,6 +772,11 @@ html {
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
+}
+@media only screen and (max-width: 37.5em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 }
 .header__logo-box {
   position: absolute;
@@ -788,11 +939,21 @@ html {
   position: relative;
   padding: 15rem 0;
 }
+@media only screen and (max-width: 56.25em) {
+  .section-stories {
+    padding: 10rem 0;
+  }
+}
 
 .section-book {
   padding: 15rem 0;
   position: relative;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+@media only screen and (max-width: 56.25em) {
+  .section-book {
+    padding: 10rem 0;
+  }
 }
 
 .book {
@@ -803,9 +964,31 @@ html {
   width: 80%;
   margin: auto;
 }
+@media only screen and (max-width: 75em) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .book {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+}
 .book__form {
   padding: 6rem;
   width: 50%;
+}
+@media only screen and (max-width: 75em) {
+  .book__form {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .book__form {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

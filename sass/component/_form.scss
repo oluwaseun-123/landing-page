@@ -1,6 +1,17 @@
 .form {
   &__group:not(:last-child) {
     margin-bottom: 2rem;
+
+    @include response(tab-port) {
+      width: 100%;
+      align-self: start;
+      justify-self: start;
+    }
+
+    .rad {
+      align-items: start !important;
+      justify-content: start !important;
+    }
   }
 
   &__input {
@@ -15,6 +26,10 @@
     border: none;
     border-bottom: 3px solid transparent;
     transition: all 0.3s;
+
+    @include response(tab-port) {
+      width: 100%;
+    }
 
     &:focus {
       outline: 0;

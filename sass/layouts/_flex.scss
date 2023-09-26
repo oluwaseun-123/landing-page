@@ -4,14 +4,28 @@
   gap: 3rem;
   width: 100%;
   align-items: stretch;
+
+  @include response(tab-port) {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .col-1-of-2 {
   width: 50%;
   padding: 0 10rem;
   position: relative;
+
+  @include response(tab-port) {
+    padding-bottom: 10rem;
+    width: 80%;
+  }
 }
 .col-1-of-3 {
   width: 100%;
+
+  @include response(tab-port) {
+    height: 100%;
+  }
   // padding: 0 5rem;
 }
 

@@ -10,8 +10,24 @@
   background-color: rgba($colour-white, 0.6);
   transform: skewX(-12deg);
   margin-bottom: 4rem;
+
+  @include response(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include response(phone) {
+    transform: skewX(0);
+    width: 80%;
+  }
+
   & > * {
     transform: skewX(12deg);
+
+    @include response(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__shape {
